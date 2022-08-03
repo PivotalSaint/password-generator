@@ -34,16 +34,17 @@ function generatePassword() {
     }
 
     if ((generatePasswordLength) > 8 || (generatePasswordLength) < 128) {
+
         userChoice = userChoice.concat(generatePasswordLength);
-    
     }
+
 
 
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 // WHEN asked for character types to include in the password
 // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 // so I need to add my variable I created 
-if (generatePasswordLength = true)
+if ((generatePasswordLength = true)) {
     var userChoice = window.prompt("How many special characters would you like in your password? 0-8 max characters");
 
     var generateSpecialCharacters = parseInt(userChoice);
@@ -53,12 +54,32 @@ if (generatePasswordLength = true)
         return
     }
         if ((generateSpecialCharacters) > 8) {
-            window.alert ("Please enter a number between 0 and 8. Thank You.")
+            window.alert ("Please enter a numberical value between 0 and 8. Thank You.")
             return
         }
     if ((generateSpecialCharacters) = 0 || (generateSpecialCharacters) < 8) {
         userChoice = userChoice.concat(specialCharacters);
     }
+}
+
+if ((generateSpecialCharacters = true)) {
+    var userChoice = window.prompt("Would you like to add upper case letters to your password? 0-26 max characters")
+    
+    var generateUpperCaseCharacters = parseInt(userChoice);
+
+    if (isNaN(generateUpperCaseCharacters)) {
+        window.alert("Please enter a numerical value between 0-26 characters")
+        return
+    }
+        if ((generateUpperCaseCharacters) > 26) {
+            window.alert ("Please enter a numerical value between 0 - 26. Thank You.")
+            return
+        }
+    if ((generateSpecialCharacters) = 0 || (generateSpecialCharacters) < 26) {
+        userChoice = userChoice.concat(upperCase);
+    }
+}
+
 }
     //
     console.log("what happens after this")
