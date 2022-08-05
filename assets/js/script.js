@@ -1,14 +1,6 @@
 // Assignment code here
 
 // GIVEN I need a new, secure password
-// These are my variables
-var generateSpecialCharacters = ["!","@","*",")","(","%","?","-","+","&","$","^","_"]; // 13 total
-var generateLowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]; //26 total
-var generateUpperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; //26 total
-var generateNumbers = ["1" ,"2", "3", "4" , "5" , "6" , "7" , "8" , "9" ]; // 10 total
-var generatePassword = [generatePasswordLength];
-var generatePasswordLength = [generateSpecialCharacters, generateLowerCase, generateUpperCase, generateNumbers];
-var generateButton =["generatePassword"]
 // Get references to the #generate element
 // This is coming from the generate id in html and attaches the generate button to the java
 // WHEN I click the button to generate a password
@@ -16,26 +8,31 @@ var generateButton =["generatePassword"]
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
-function generatePassword() {
+var generateSpecialCharacters = ["!","@","*",")","(","%","?","-","+","&","$","^","_"]; // 13 total
+var generateLowerCaseCharacters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]; //26 total
+var generateUpperCaseCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; //26 total
+var numerical = ["1" ,"2", "3", "4" , "5" , "6" , "7" , "8" , "9" ]; // 10 total
 
-function generatePasswordLength () {
-    var generatePasswordLength = window.prompt("How many characters do you want generated password to be? 8-128 max characters.");
-    
-    var generatePasswordLength = parseInt(generatePasswordLength);
+function generatePassword() {
+    // GIVEN I need a new, secure password
+// These are my variables
+
+
+    generatePassword = window.prompt("How many characters do you want generated password to be? 8-128 max characters.");
+    generatePassword = parseInt(generatePassword);
 
     // WHEN prompted for the length of the password
-        if (isNaN(generatePasswordLength)) {
+        if (isNaN(generatePassword)) {
         window.alert("Please enter a numerical value between 8-128 characters")
             return
         }
 
-        if ((generatePasswordLength) < 8 || (generatePasswordLength) > 128) {
+        if ((generatePassword) < 8 || (generatePassword) > 128) {
         window.alert("Please choose between 8-128 max characters")
         return
         }
 
-        else  ((generatePasswordLength) > 8 || (generatePasswordLength) < 128);
-    }
+        else  ((generatePassword) > 8 || (generatePassword) < 128);
     
 
 
@@ -43,12 +40,10 @@ function generatePasswordLength () {
 // WHEN asked for character types to include in the password
 // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 // so I need to add my variable strings I created 
-if ((generatePasswordLength = true));
 
-function generateSpecialCharacters() {
-    var generateSpecialCharacters = window.prompt("How many special characters would you like in your password? 0-13 max characters");
+    generateSpecialCharacters = window.prompt("How many special characters would you like in your password? 0-13 max characters");
 
-    var generateSpecialCharacters = parseInt(generateSpecialCharacters);
+    generateSpecialCharacters = parseInt(generateSpecialCharacters);
 
         if (isNaN(generateSpecialCharacters)) {
         window.alert("Please enter a numerical value between 0-13 characters")
@@ -58,78 +53,60 @@ function generateSpecialCharacters() {
             window.alert ("Please enter a numberical value between 0 and 13. Try Again. Thank You.")
             return
             }
-        else ((generateSpecialCharacters) < 1, null);
-        
-    }
+        else generateSpecialCharacters < 1; null;
     //upper case beginning
-    if  ((generateSpecialCharacters = true)) {
 
-function generateUpperCaseCharacters () {
-    var generateUpperCaseCharacters = window.prompt("Would you like to add upper case letters to your password? 0-26 max characters")
+        generateUpperCaseCharacters = window.prompt("Would you like to add upper case letters to your password? 0-26 max characters")
     
-    var generateUpperCaseCharacters = parseInt(generateUpperCaseCharacters);
+        generateUpperCaseCharacters = parseInt(generateUpperCaseCharacters);
 
     if (isNaN(generateUpperCaseCharacters)) {
         window.alert("Please enter a numerical value between 0-26 characters")
         return
             }
-        if ((generateUpperCaseCharacters) > 26) {
+        if ((generateUpperCaseCharacters)<1 || (generateUpperCaseCharacters)> 26) {
             window.alert ("Please enter a numerical value between 0 - 26. Thank You.")
             return
             }
-    else ((generateUpperCaseCharacters) < 1, null);
-        }
-        
-    }
+    else (generateUpperCaseCharacters) < 1; null;
+
 
     //lowercase beginning 
-    if ((generateUpperCaseCharacters = true)); {
-
-function generateLowerCaseCharacters () {
-        var generateLowerCaseCharacters = window.prompt("Would you like to add lower case letters to your password? 0-26 max characters")
+        var lowerCase = window.prompt("Would you like to add lower case letters to your password? 0-26 max characters")
     
-        var generateLowerCaseCharacters = parseInt(generateLowerCaseCharacters);
+        var lowerCase = parseInt(lowerCase);
 
     if (isNaN(generateLowerCaseCharacters)) {
         window.alert("Please enter a numerical value between 0-26")
         return
             }
-        if ((generateLowerCaseCharacters) > 26) {
+        if ((generateLowerCaseCharacters) < 1 || (generateLowerCaseCharacters) > 26) {
             window.alert ("Please enter a numerical value between 0 - 26. Thank You.")
             return
             }
-    else ((generateLowerCaseCharacters) < 1, null);
-    
-        }
-    }
+        else (generateLowerCaseCharacters) < 1; null;
 
     //start of numbers
-    if (generateLowerCaseCharacters = true) {
 
-function generateNumbers () {
-        var generateNumbers = window.prompt("You must add numbers to your password. Select max characters as a numerical value between 0-9")
+        numerical = window.prompt("You must add numbers to your password. Select max characters as a numerical value between 0-9")
 
-            if (isNaN(generateNumbers)) {
+            if (isNaN(numerical)) {
                 window.alert("Please enter a numerical value between 0-9")
                 return
                 }
-            else ((generateNumbers) < 1, null);
-                
+            if ((numerical) <1 || (numerical) > 9) {
+                window.alert("Please Enter a numerical value between 0-9")
+                return
+            }
+            else (numerical) < 1; null;
         }
-    }
-}
-    
+    var generatePassword= document.addEventListener("click", generatePassword);
     //
     console.log("what happens after this")
 
 // Write password to the #password input
 
     console.log(("i hope this works"))
-
-var generateButton = document.querySelector(".placeholder");
-var btn = document.querySelector("button")
-
-window.button.doucment.addEventListener("click", generateButton());
     
 
 // this is going to the id tag in html password, this should be the last thing to go back to code sourcing after all functions run
